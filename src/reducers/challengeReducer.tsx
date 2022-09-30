@@ -1,6 +1,11 @@
 import { FETCH_CHALLENGES } from '../actions/types'
 
-function challengeReducer(state = {}, action) {
+interface challengeAction {
+    type: string,
+    payload: []
+}
+
+function challengeReducer(state = {}, action: challengeAction) {
     switch(action.type) {
         case FETCH_CHALLENGES:
             return action.payload

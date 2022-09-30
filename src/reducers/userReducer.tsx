@@ -7,7 +7,16 @@ const defaultState = {
     error: ''
 }
 
-function userReducer(state = defaultState, action) {
+interface userAction {
+    type: string,
+    payload: {
+        error: string,
+        user: string,
+        userId: number
+    }
+}
+
+function userReducer(state = defaultState, action: userAction) {
     switch(action.type) {
         case LOGIN:
             if (action.payload.error) {
